@@ -1,4 +1,4 @@
-package com.plaps.androidcleancode.deps;
+package com.plaps.androidcleancode.component;
 
 
 import com.plaps.androidcleancode.home.HomeActivity;
@@ -13,6 +13,6 @@ import dagger.Component;
  */
 @Singleton
 @Component(modules = {NetworkModule.class,})
-public interface Deps {
+public interface CityComponent {
     void inject(HomeActivity homeActivity);
 }

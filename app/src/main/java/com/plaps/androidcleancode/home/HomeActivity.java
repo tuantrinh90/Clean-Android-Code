@@ -18,14 +18,16 @@ import javax.inject.Inject;
 public class HomeActivity extends BaseApp implements HomeView {
 
     private RecyclerView list;
+
     @Inject
-    public  Service service;
+    public Service service;
+
     ProgressBar progressBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getDeps().inject(this);
+        getComponent().inject(this);
 
         renderView();
         init();
@@ -34,13 +36,13 @@ public class HomeActivity extends BaseApp implements HomeView {
         presenter.getCityList();
     }
 
-    public  void renderView(){
+    public void renderView() {
         setContentView(R.layout.activity_home);
         list = findViewById(R.id.list);
         progressBar = findViewById(R.id.progress);
     }
 
-    public void init(){
+    public void init() {
         list.setLayoutManager(new LinearLayoutManager(this));
     }
 
